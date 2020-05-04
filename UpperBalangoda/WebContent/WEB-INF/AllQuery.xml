@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Querys>
+
+<!-- Create table localRequest Query -->
+	<query id="create_localRequest_table">
+        <![CDATA[
+            CREATE TABLE localRequest(
+				localRequestID varchar(10) not null,
+				localRequestName varchar(100),
+				localRequestAddress varchar(100),
+				localRequestEmail varchar(100),
+				localRequestfax varchar(100),
+				localRequestMPhone varchar(12),
+				localRequestO1Phone varchar(12),
+				localRequestO2Phone varchar(12),
+				localRequestTea varchar(20),
+				localRequestQuntity varchar(10),
+				primary key (localRequestID)
+			);
+        ]]>
+	</query>
+
+	<!-- DROP TABLE EMPLOYEES Query -->
+	<query id="drop_table">
+         <![CDATA[        
+            select * from localRequest 
+        ]]>
+	</query>
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_localRequest">
+        <![CDATA[
+          	insert into localRequest (localRequestID, localRequestName, localRequestAddress, localRequestEmail,
+          	 localRequestfax, localRequestMPhone, localRequestO1Phone, localRequestO2Phone, localRequestTea, localRequestQuntity) 
+          	values (?, ?, ?, ?, ?, ?, ?, ?,?,?)
+        ]]>
+	</query>
+
+	<!-- Select a particular localRequest by id Query -->
+	<query id="localRequest_by_id">
+         <![CDATA[        
+            select * from localRequest where localRequest.localRequestID = ?
+        ]]>
+	</query>
+
+	<!-- Select all localRequests -->
+	<query id="all_localRequests">
+         <![CDATA[        
+            select * from localRequest
+        ]]>
+	</query>
+
+	<!-- Delete a particular localRequest by id Query -->
+	<query id="remove_localRequest">
+         <![CDATA[        
+            delete from localRequest where localRequest.localRequestID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular localRequest by id Query -->
+	<query id="update_localRequest">
+         <![CDATA[        
+            update localRequest as l 
+            set l.localRequestName = ?, l.localRequestAddress = ?, l.localRequestEmail = ?, l.localRequestfax = ?, l.localRequestMPhone = ?,
+             l.localRequestO1Phone = ?, l.localRequestO2Phone = ?, l.localRequestTea = ? , l.localRequestQuntity = ? 
+            where l.localRequestID = ?
+        ]]>
+	</query>
+	
+		<!-- Get localRequest IDs Query -->
+	<query id="localRequest_ids">
+         <![CDATA[        
+            select l.localRequestID from localRequest as l
+        ]]>
+	</query>
+
+	
+	<!-- SignUp Query -->
+	<!-- Create table signUp Query -->
+	<query id="create_signUp_table">
+        <![CDATA[
+            CREATE TABLE signUp(
+				signUpID varchar(10) not null,
+				signCompanyType varchar(100),
+				signUpName varchar(100),
+				signUpUserName varchar(100),
+				signUpPassword varchar(10),
+				signUpRePassword varchar(10),
+				
+				primary key (signUpID)
+			);
+        ]]>
+	</query>
+
+	<!-- DROP TABLE EMPLOYEES Query -->
+	<query id="drop_signUp_table">
+         <![CDATA[        
+            select * from signUp 
+        ]]>
+	</query>
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_signUp">
+        <![CDATA[
+          	insert into signUp (signUpID, signCompanyType, signUpName, signUpUserName, signUpPassword, signUpRePassword ) 
+          	values (?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular signUp by id Query -->
+	<query id="signUp_by_id">
+         <![CDATA[        
+            select * from signUp where signUp.signUpID = ?
+        ]]>
+	</query>
+
+	<!-- Select all signUps -->
+	<query id="all_signUp">
+         <![CDATA[        
+            select * from signUp
+        ]]>
+	</query>
+
+	<!-- Delete a particular signUp by id Query -->
+	<query id="remove_signUp">
+         <![CDATA[        
+            delete from signUp where signUp.signUpID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular signUp by id Query -->
+	<query id="update_signUp">
+         <![CDATA[        
+            update signUp as s
+            set  s.signCompanyType = ?, s.signUpName = ?, s.signUpUserName = ?, s.signUpPassword = ?, s.signUpRePassword = ? 
+            where s.signUpID = ?
+        ]]>
+	</query>
+	
+		<!-- Get signUp IDs Query -->
+	<query id="signUp_ids">
+         <![CDATA[        
+            select s.signUpID from signUp as s
+        ]]>
+	</query>
+	
+	
+		<!-- AddBid Query -->
+	<!-- Create table bid Query -->
+	<query id="create_addbid_table">
+        <![CDATA[
+            CREATE TABLE bid(
+				bidID varchar(10) not null,
+				bidImage  mediumblob not null,
+				bidDescription varchar(150),
+				bidPrice varchar(100),		
+				primary key (bidID)
+			);
+        ]]>
+	</query>
+
+	<!-- DROP TABLE EMPLOYEES Query -->
+	<query id="drop_bid_table">
+         <![CDATA[        
+            select * from bid 
+        ]]>
+	</query>
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_bid">
+        <![CDATA[
+          	insert into bid (bidID, bidImage, bidDescription, bidPrice) 
+          	values (?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular bid by id Query -->
+	<query id="bid_by_id">
+         <![CDATA[        
+            select * from bid where bid.bidID = ?
+        ]]>
+	</query>
+
+	<!-- Select all bids -->
+	<query id="all_bid">
+         <![CDATA[        
+            select * from bid
+        ]]>
+	</query>
+
+	<!-- Delete a particular bid by id Query -->
+	<query id="remove_bid">
+         <![CDATA[        
+            delete from bid where bid.bidID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular bid by id Query -->
+	<query id="update_bid">
+         <![CDATA[        
+            update bid as b
+            set b.bidImage = ?, b.bidDescription = ?, b.bidPrice = ?  
+            where b.bidID = ?s
+        ]]>
+	</query>
+	
+		<!-- Get bid IDs Query -->
+	<query id="bid_ids">
+         <![CDATA[        
+            select b.bidID from bid as b
+        ]]>
+	</query>
+
+</Querys>
