@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Upper Balangoda Tea Factory</display-name>
+
+ 
+  <servlet>
+    <servlet-name>AddLocalRequestServlet</servlet-name>
+    <servlet-class>servlet.AddLocalRequestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateLocalRequestServlet</servlet-name>
+    <servlet-class>servlet.UpdateLocalRequestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteLocalRequestServlet</servlet-name>
+    <servlet-class>servlet.DeleteLocalRequestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetLocalRequestServlet</servlet-name>
+    <servlet-class>servlet.GetLocalRequestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListLocalRequestServlet</servlet-name>
+    <servlet-class>servlet.ListLocalRequestServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>servlet.LoginController</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+  <!-- Regarding Local Tea Broker Company Request  -->
+    <servlet-name>AddLocalRequestServlet</servlet-name>
+    <url-pattern>/AddLocalRequestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateLocalRequestServlet</servlet-name>
+    <url-pattern>/UpdateLocalRequestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteLocalRequestServlet</servlet-name>
+    <url-pattern>/DeleteLocalRequestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetLocalRequestServlet</servlet-name>
+    <url-pattern>/GetLocalRequestServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>ListLocalRequestServlet</servlet-name>
+    <url-pattern>/ListLocalRequestServlet</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>AddSignUpServlet</servlet-name>
+    <servlet-class>servlet.AddSignUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateSignUpServlet</servlet-name>
+    <servlet-class>servlet.UpdateSignUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteSignUpServlet</servlet-name>
+    <servlet-class>servlet.DeleteSignUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetSignUpServlet</servlet-name>
+    <servlet-class>servlet.GetSignUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListSignUpServlet</servlet-name>
+    <servlet-class>servlet.ListSignUpServlet</servlet-class>
+  </servlet>
+    
+    <servlet>
+    <servlet-name>addBidServlet</servlet-name>
+    <servlet-class>servlet.addBidServlet</servlet-class>
+  </servlet>
+   
+  <servlet-mapping>
+    <servlet-name>GetSignUpServlet</servlet-name>
+    <url-pattern>/GetSignUpServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>DeleteSignUpServlet</servlet-name>
+    <url-pattern>/DeleteSignUpServlet</url-pattern>
+  </servlet-mapping>
+ 
+ 
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>
+
