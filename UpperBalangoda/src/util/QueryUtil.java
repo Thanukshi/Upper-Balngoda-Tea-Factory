@@ -29,7 +29,7 @@ public class QueryUtil extends CommonUtil {
 		 * Read the EmployeeQuery.xml file and read each query node into node
 		 * list. It refers tag name query
 		 */
-		nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(System.getProperty("catalina.base") + "\\wtpwebapps\\UpperBalangodaTeaFactory\\WEB-INF\\AllQuery.xml"))
+		nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(System.getProperty("catalina.base") + "\\wtpwebapps\\UpperBalangoda\\WEB-INF\\AllQuery.xml"))
 				.getElementsByTagName(CommonConstants.TAG_NAME);
 
 		/*
