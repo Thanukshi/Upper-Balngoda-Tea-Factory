@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Uper Balangoda Tea Factory</title>
+    <title>Upper Balangoda Tea Factory</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -88,7 +88,7 @@
                     <h2 class="title">Edit Your Order Here</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="ListLocalRequestServlet">
+                    <form method="POST" action="UpdateLocalRequestServlet">
                     
                     <div class="form-row">
                             <div class="name">Request ID</div>
