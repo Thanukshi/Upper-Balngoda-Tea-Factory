@@ -27,6 +27,7 @@
 
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link rel="stylesheet"   href="css/table.css">
 
 </head>
 
@@ -238,74 +239,62 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Local Tea Broker Requests </h1>
-          <p class="mb-4"> All Tea Brokers Requests are available in here.</p>
+          <h1 class="h3 mb-2 text-gray-800">Company Details </h1>
+          <p class="mb-4"> All registered company details are available in here.</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Manage Your Orders</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Manage Company Details</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>LocalRequest ID</th>
-                      <th>Company Name</th>
-                      <th>Company Address</th>
-                      <th>Email</th>
-                      <th>Fax</th>
-                      <th>Mobile Number</th>
-                      <th>Office Number 1</th>
-		              <th>Office Number 2</th>
-		              <th>Type of Tea</th>
-		              <th>Quantity</th>
-                      <th>Actions</th>
+                      <th>Company ID</th>
+		            	<th>Type of Company</th>
+		                <th>Company Name</th>
+		                <th>User Name</th>
+		                <th>Password</th>
+                		<th>Confirm Password</th>
+                        <th>Actions</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>LocalRequest ID</th>
-                      <th>Company Name</th>
-                      <th>Company Address</th>
-                      <th>Email</th>
-                      <th>Fax</th>
-                      <th>Mobile Number</th>
-                      <th>Office Number 1</th>
-		              <th>Office Number 2</th>
-		              <th>Type of Tea</th>
-		              <th>Quantity</th>
-                      <th>Actions</th>
+                     <th>Company ID</th>
+		            	<th>Type of Company</th>
+		                <th>Company Name</th>
+		                <th>User Name</th>
+		                <th>Password</th>
+                		<th>Confirm Password</th>
+                        <th>Actions</th>
                     </tr>
                   </tfoot>
                   <tbody>
                    
                    
   
-  					<%
-        	ILocalRequestService iLocalRequestService = new LocalRequestServiceImp();
-        	ArrayList<LocalRequest> arrayList = iLocalRequestService.getLocalRequests();
-        	
-        	for(LocalRequest localRequest : arrayList){
-        	
-        	%>
+  					 <%
+		        	ISignUpService iSignUpService = new SignUpServiceImp();
+		        	ArrayList<SignUp> arrayList = iSignUpService.getSignUp();
+		        	
+		        	for(SignUp signUp : arrayList){
+		        	%>
   
   			<tr>
-                   <td> <%=localRequest.getLocalRequestCompanyID() %> </td>
-				<td> <%=localRequest.getLocalRequestCompanyName() %> </td>
-				<td> <%=localRequest.getLocalRequestCompanyAddress() %> </td>
-				<td> <%=localRequest.getLocalRequestCompanyEmail() %> </td>
-				<td> <%=localRequest.getLocalRequestCompanyFax() %> </td>
-				<td> <%=localRequest.getLocalRequestCompanyMobile() %> </td>
-				<td> <%=localRequest.getLocalRequestCompanyOffice1() %> </td>
-				<td> <%=localRequest.getLocalRequestCompanyOffice2() %> </td>	
-				<td> <%=localRequest.getLocalRequestCompanyTeaType() %> </td>
-				<td> <%=localRequest.getLocalRequestCompanyQuntity() %> </td>
+                   <td> <%=signUp.getCompanyID() %> </td>
+						<td> <%=signUp.getCompanyType() %> </td>
+						<td> <%=signUp.getCompanyName() %> </td>
+						<td> <%=signUp.getUserName() %> </td>
+						<td> <%=signUp.getCompanyPassword() %> </td>
+						<td> <%=signUp.getCompanyRePassword() %> </td>
 				<td>
-				<form method="POST" action="GetLocalRequestServlet">
-				<input type="hidden" name="localRequestID" value="<%=localRequest.getLocalRequestCompanyID()%>"/>
+				<form method="POST" action="GetSignUpServlet">
+				<input type="hidden" name="signUpID" value="<%=signUp.getCompanyID()%>"/>
 						 <button class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>
+                            
                             
 				</form>
 				</td>

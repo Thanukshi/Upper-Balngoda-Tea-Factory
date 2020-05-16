@@ -20,10 +20,30 @@
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  
+  <!-- Edit button CSS -->
+  <style>
+.btnEdit {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btnEdit:hover {
+  background-color: RoyalBlue;
+}
+</style>
+
+  
+  
 
   <!-- Custom styles for this template -->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="css/table.css" rel="stylesheet">
+
 
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -305,7 +325,7 @@
 				<td>
 				<form method="POST" action="GetLocalRequestServlet">
 				<input type="hidden" name="localRequestID" value="<%=localRequest.getLocalRequestCompanyID()%>"/>
-						 <button class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>
+						
                             
 				</form>
 				</td>
