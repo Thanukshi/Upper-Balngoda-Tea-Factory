@@ -41,6 +41,53 @@
 
     <!-- Main CSS-->
     <link href="css/formLocal.css" rel="stylesheet" media="all">
+    
+    <!-- validation for form -->
+    <script>
+	function validateForm() {
+	  var x = document.forms["formVal"]["LCompany"].value;
+	  if (x == "") {
+	    alert("Company Name must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["LAddress"].value;
+	  if (x == "") {
+	    alert("Company Address must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["Lemail"].value;
+	  if (x == "") {
+	    alert("Company Email must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["Lfax"].value;
+	  if (x == "") {
+	    alert("Company Fax must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["LMphone"].value;
+	  if (x == "") {
+	    alert("Mobile Number must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["LO1phone"].value;
+	  if (x == "") {
+	    alert("Office Number of Company must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["LteaType"].value;
+	  if (x == "") {
+	    alert("Your request tea type must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["LQuantity"].value;
+	  if (x == "") {
+	    alert("Quantity must be filled out");
+	    return false;
+	  }
+	 
+	}
+</script>
   </head>
   <body>
    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -84,40 +131,40 @@
                     <h2 class="title">Request Your Order Here</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="AddLocalRequestServlet">
+                    <form method="POST" action="AddLocalRequestServlet" name = "formVal" onsubmit="return validateForm()">
                     
                     <div class="form-row">
-                            <div class="name">Company</div>
+                            <div class="name">Company Name</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="LCompany">
+                                    <input class="input--style-5" type="text" name="LCompany" required="required">
                                 </div>
                             </div>
                         </div>
                         
                          <div class="form-row">
-                            <div class="name">Address</div>
+                            <div class="name">Company Address</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="LAddress">
+                                    <input class="input--style-5" type="text" name="LAddress" required="required">
                                 </div>
                             </div>
                         </div>
                         
                         <div class="form-row">
-                            <div class="name">Email</div>
+                            <div class="name">Company Email</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="Lemail">
+                                    <input class="input--style-5" type="email" name="Lemail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="required">
                                 </div>
                             </div>
                        	</div>
                        	
                        	<div class="form-row">
-                            <div class="name">Fax</div>
+                            <div class="name">Company Fax</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="Lfax">
+                                    <input class="input--style-5" type="tel" name="Lfax" required="required">
                                 </div>
                             </div>
                         </div>
@@ -126,7 +173,7 @@
                             <div class="name">Mobile Number</div>
                             <div class="value">
                                 <div class="input-group">
-                                <input class="input--style-5" type="tel"  name="LMphone" >
+                                <input class="input--style-5" type="tel"  name="LMphone"   pattern="^\d{3}\d{3}\d{4}$" title = "Please enter valid phone number. (format: xxxxxxxxxx)" required="required">
                             </div>
                             </div>
                         </div>
@@ -135,7 +182,7 @@
                             <div class="name">Office Number</div>
                             <div class="value">
                                 <div class="input-group">
-                                <input class="input--style-5" type="tel"  name="LO1phone" >
+                                <input class="input--style-5" type="tel"  name="LO1phone" pattern="^\d{3}\d{3}\d{4}$" title = "Please enter valid phone number. (format: xxxxxxxxxx)" required="required">
                             </div>
                             </div>
                         </div>
@@ -144,7 +191,7 @@
                             <div class="name">Office Number</div>
                             <div class="value">
                                 <div class="input-group">
-                                <input class="input--style-5" type="tel"  name="LO2phone" >
+                                <input class="input--style-5" type="tel"  name="LO2phone" pattern="^\d{3}\d{3}\d{4}$" title = "Please enter valid phone number. (format: xxxxxxxxxx)" required="required">
                             </div>
                             </div>
                         </div>
@@ -154,7 +201,7 @@
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="LteaType">
+                                        <select name="LteaType" required="required">
                                             <option disabled="disabled" selected="selected">Choose Tea Type</option>
                                             <option>BOPF</option>
                                             <option>BOPA</option>
@@ -179,7 +226,7 @@
                                 <div class="row row-refine">
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="number" name="LQuantity">
+                                            <input class="input--style-5" type="number" name="LQuantity" required="required">
                                             </div>
                                             </div>
                                             </div>

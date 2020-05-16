@@ -44,6 +44,37 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- validate form -->
+	<script>
+	function validateForm() {
+	  var x = document.forms["formVal"]["signUpCompanyType"].value;
+	  if (x == "") {
+	    alert("Company Type must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["SignUpCompanyName"].value;
+	  if (x == "") {
+	    alert("Company Name must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["SignUpUserName"].value;
+	  if (x == "") {
+	    alert("User Name must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["SignUpPassword"].value;
+	  if (x == "") {
+	    alert("Password must be filled out");
+	    return false;
+	  }
+	  var x = document.forms["formVal"]["SignUpConfirmPassword"].value;
+	  if (x == "") {
+	    alert("Confirm Password must be filled out");
+	    return false;
+	  }
+	  			
+	}
+	</script>
  </head>
   <body>
    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -105,7 +136,7 @@
                     <div class="login-logo">
                         <img src="images/teaCupLogin1.png" alt=""/>
                     </div>
-                    <form method="POST" action="AddSignUpServlet">
+                    <form method="POST" action="AddSignUpServlet" name = "formVal" onsubmit="return validateForm()">
                     <h3>Sign Up</h3>
                     <div class="form-group"  >
                             <select name="signUpCompanyType" class="form-control">
@@ -115,16 +146,17 @@
                           </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" name = "SignUpCompanyName" class="form-control" placeholder="Company Name *" value=""  />
+                            <input type="text" name = "SignUpCompanyName" class="form-control" placeholder="Company Name *" value=""  required="required"/>
                         </div>
                         <div class="form-group">
-                            <input type="text" name = "SignUpUserName" class="form-control" placeholder="User Name *" value=""  />
+                            <input type="text" name = "SignUpUserName" class="form-control" placeholder="User Name *" value=""  required="required" />
                         </div>
                         <div class="form-group">
-                            <input type="password" name = "SignUpPassword" class="form-control" placeholder="Password *" value="" />
+                            <input type="password" name = "SignUpPassword" class="form-control" placeholder="Password *" value="" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
                         </div>
                         <div class="form-group">
-                            <input type="password" name = "SignUpConfirmPassword" class="form-control" placeholder="Confirm Password *" value=""  />
+                            <input type="password" name = "SignUpConfirmPassword" class="form-control" placeholder="Confirm Password *" value="" required="required"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+                            
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btnSubmit" value="Sign Up" />
