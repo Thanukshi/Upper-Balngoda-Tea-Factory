@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+
     pageEncoding="ISO-8859-1"%>
+    <%@page import="model.SignUp"%>
+<%@page import="java.util.ArrayList"%>
+     <%  %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +13,15 @@
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/table.css" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -29,6 +42,22 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
      <link rel="stylesheet" href="css/calender.css">
+     
+     <!-- Dialog Box for log out -->
+      <script type = "text/javascript">
+         <!--
+            function getConfirmation() {
+               var retVal = confirm("Do you want to exit ?");
+               if( retVal == true ) {
+                  
+                  return true;
+               } else {
+                 
+                  return false;
+               }
+            }
+         //-->
+      </script>
   </head>
   <body>
 
@@ -38,21 +67,33 @@
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
-
+  <% 
+	 // SignUp su = (SignUp) request.getClass("su"); getAttribute("su");
+  String s = (String) request.getAttribute("s");
+	
+		%>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item active"><a href="index.jsp" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="about.jsp" class="nav-link">About</a></li>
 	        	<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-	        	<li class="nav-item"><a href="blog.html" class="nav-link">Stories</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item"><a href="LoginConnect.jsp" class="nav-link">Login</a></li>
-	          <li class="nav-item"><a href="LocalRequestForm.jsp" class="nav-link">Request Order</a></li>	          
-	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+	             <li class="nav-item"><a href="contact.jsp" class="nav-link">Contact</a></li>
+	          
+	          <li class="nav-item"><a href="LocalRequestForm.jsp" class="nav-link">Request Order</a></li>
+	          
+	          <li class="nav-item"> <form method="POST" action="CompanyGetSignUpServlet">
+				<input type="hidden" name="signUpID" value="<%=s%>"/>
+				<input type="submit" value= "My Profile" class="select-button" /> 
+				</form></li>
+			    <li class="nav-item"><form action="index.jsp">
+			    <input type="submit" value="Log Out"  onclick = "getConfirmation();" />
+				</form> </li>
+			       	          	      
+	          </ul>
+	          </div>
+	          </div>
+	          </nav>
+	                     
     <!-- END nav -->
     
     <section class="home-slider owl-carousel js-fullheight">
@@ -592,7 +633,41 @@
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="index.jsp">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery1.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
