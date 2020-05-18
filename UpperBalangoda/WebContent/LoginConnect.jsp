@@ -79,7 +79,7 @@
   <body>
    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Upper Balangoda Tea Factory</a>
+	      <a class="navbar-brand" href="index.jsp">Upper Balangoda Tea Factory</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -87,11 +87,11 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
-	        	<li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item active"><a href="about.jsp" class="nav-link">About</a></li>
 	        	<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-	        	<li class="nav-item"><a href="blog.html" class="nav-link">Stories</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
+	             <li class="nav-item"><a href="contact.jsp" class="nav-link">Contact</a></li>
+	             <li class="nav-item"><a href="LoginConnect.jsp" class="nav-link">Login</a></li>
+	          
 	        </ul>
 	      </div>
 	    </div>
@@ -126,7 +126,7 @@
                             <input type="submit" class="btnSubmit" value="Sign In" />
                         </div>
                         <div class="form-group">
-                            <a href="#" class="btnForgetPwd">Forget Password?</a>
+                            <a href="ForgotPassword.jsp" class="btnForgetPwd">Forget Password?</a>
                         </div>
                         </form>
                     
@@ -146,16 +146,16 @@
                           </select>
                         </div>
                         <div class="form-group">
-                            <input type="text" name = "SignUpCompanyName" class="form-control" placeholder="Company Name *" value=""  required="required"/>
+                            <input type="text" name = "SignUpCompanyName" class="form-control" placeholder="Company Name *" value=""  />
                         </div>
                         <div class="form-group">
-                            <input type="text" name = "SignUpUserName" class="form-control" placeholder="User Name *" value=""  required="required" />
+                            <input type="text" name = "SignUpUserName" class="form-control" placeholder="User Name *" value=""   />
                         </div>
                         <div class="form-group">
-                            <input type="password" name = "SignUpPassword" class="form-control" placeholder="Password *" value="" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+                            <input type="password" name = "SignUpPassword" class="form-control" placeholder="Password *" value=""  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
                         </div>
                         <div class="form-group">
-                            <input type="password" name = "SignUpConfirmPassword" class="form-control" placeholder="Confirm Password *" value="" required="required"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+                            <input type="password" name = "SignUpConfirmPassword" class="form-control" placeholder="Confirm Password *" value="" "  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
                             
                         </div>
                         <div class="form-group">

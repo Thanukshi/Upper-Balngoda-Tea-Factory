@@ -28,6 +28,42 @@
     <servlet-name>LoginController</servlet-name>
     <servlet-class>servlet.LoginController</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name> CompanyGetSignUpServlet</servlet-name>
+    <servlet-class>servlet.CompanyGetSignUpServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>AddSignUpServlet</servlet-name>
+    <servlet-class>servlet.AddSignUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateSignUpServlet</servlet-name>
+    <servlet-class>servlet.UpdateSignUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteSignUpServlet</servlet-name>
+    <servlet-class>servlet.DeleteSignUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetSignUpServlet</servlet-name>
+    <servlet-class>servlet.GetSignUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListSignUpServlet</servlet-name>
+    <servlet-class>servlet.ListSignUpServlet</servlet-class>
+  </servlet>
+       
+  <servlet>
+    <servlet-name>CompanyDeleteSignUpServlet</servlet-name>
+    <servlet-class>servlet.CompanyDeleteSignUpServlet</servlet-class>
+  </servlet>
+  
+    <servlet>
+    <servlet-name>EditCompanyGetSignUpServlet</servlet-name>
+    <servlet-class>servlet.EditCompanyGetSignUpServlet</servlet-class>
+  </servlet>
+
   
    <servlet-mapping>
   <!-- Regarding Local Tea Broker Company Request  -->
@@ -51,31 +87,15 @@
     <url-pattern>/ListLocalRequestServlet</url-pattern>
   </servlet-mapping>
   
-   <servlet>
-    <servlet-name>AddSignUpServlet</servlet-name>
-    <servlet-class>servlet.AddSignUpServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UpdateSignUpServlet</servlet-name>
-    <servlet-class>servlet.UpdateSignUpServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>DeleteSignUpServlet</servlet-name>
-    <servlet-class>servlet.DeleteSignUpServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>GetSignUpServlet</servlet-name>
-    <servlet-class>servlet.GetSignUpServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>ListSignUpServlet</servlet-name>
-    <servlet-class>servlet.ListSignUpServlet</servlet-class>
-  </servlet>
-    
-    <servlet>
-    <servlet-name>addBidServlet</servlet-name>
-    <servlet-class>servlet.addBidServlet</servlet-class>
-  </servlet>
+     <servlet-mapping>
+    <servlet-name>EditCompanyGetSignUpServlet</servlet-name>
+    <url-pattern>/EditCompanyGetSignUpServlet</url-pattern>
+  </servlet-mapping>
+  
+
+  
+
+
    
   <servlet-mapping>
     <servlet-name>GetSignUpServlet</servlet-name>
@@ -85,6 +105,15 @@
     <servlet-name>DeleteSignUpServlet</servlet-name>
     <url-pattern>/DeleteSignUpServlet</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CompanyGetSignUpServlet</servlet-name>
+    <url-pattern>/CompanyGetSignUpServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CompanyDeleteSignUpServlet</servlet-name>
+    <url-pattern>/CompanyDeleteSignUpServlet</url-pattern>
+  </servlet-mapping>
+   
  
  
   <welcome-file-list>

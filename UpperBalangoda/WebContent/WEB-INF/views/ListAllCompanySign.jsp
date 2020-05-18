@@ -27,7 +27,24 @@
 
   <!-- Custom styles for this page -->
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-  <link rel="stylesheet"   href="css/table.css">
+  
+    <!-- Edit button CSS -->
+  <style>
+.btnEdit {
+  background-color: #15ead6;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btnEdit:hover {
+  background-color: #34F319 ;
+}
+</style>
+  
 
 </head>
 
@@ -57,7 +74,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="admin.jsp">
+        <a class="nav-link" href="index.jsp">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -206,12 +223,15 @@
 
             
               
-                   
-
-            <div class="topbar-divider d-none d-sm-block"></div>
+                  
+            
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
+              <a href="CompanylistReport.jsp" class="nav-link dropdown-toggle"><i class="fas fa-print fa-2x" style="color:black"></i></a>
+              </li>
+              
+              <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <img class="img-profile rounded-circle" src="images/profile.png">
               </a>
@@ -293,7 +313,7 @@
 				<td>
 				<form method="POST" action="GetSignUpServlet">
 				<input type="hidden" name="signUpID" value="<%=signUp.getCompanyID()%>"/>
-						 <button class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>
+						<button class="btnEdit"><i class="fas fa-edit" title="Edit"></i></button>
                             
                             
 				</form>

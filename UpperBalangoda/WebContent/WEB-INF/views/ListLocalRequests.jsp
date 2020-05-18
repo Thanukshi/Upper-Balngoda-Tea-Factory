@@ -24,7 +24,7 @@
   <!-- Edit button CSS -->
   <style>
 .btnEdit {
-  background-color: DodgerBlue;
+  background-color: #15ead6;
   border: none;
   color: white;
   padding: 12px 16px;
@@ -34,7 +34,7 @@
 
 /* Darker background on mouse-over */
 .btnEdit:hover {
-  background-color: RoyalBlue;
+  background-color: #34F319 ;
 }
 </style>
 
@@ -223,13 +223,11 @@
               </div>
             </li>
 
-            
+             <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a href="ListRequest.jsp" class="nav-link dropdown-toggle"><i class="fas fa-print fa-2x" style="color:black"></i></a>
+              </li>
               
-                   
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <img class="img-profile rounded-circle" src="images/profile.png">
@@ -325,7 +323,7 @@
 				<td>
 				<form method="POST" action="GetLocalRequestServlet">
 				<input type="hidden" name="localRequestID" value="<%=localRequest.getLocalRequestCompanyID()%>"/>
-						
+						<button class="btnEdit"><i class="fas fa-edit" title="Edit"></i></button>
                             
 				</form>
 				</td>

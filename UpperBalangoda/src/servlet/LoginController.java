@@ -29,6 +29,7 @@ import util.CommonConstants;
  */
 @WebServlet("/LoginController")
 public class LoginController extends HttpServlet {
+	SignUp su = new SignUp();
 	String s1;
 	private static final long serialVersionUID = 1L;
        
@@ -60,57 +61,54 @@ public class LoginController extends HttpServlet {
 		// Connect to mysql and verify username password
 		
 		try {
-	/*		Class.forName("com.mysql.jdbc.Driver");
-		 // loads driver
-			//Connection l = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/upperbalangoda", "root", "root" );
-			Connection s = DriverManager.getConnection("jdbc:mysql://localhost:3306/upperbalangoda", "root", "root");
-	//	Connection s = DriverManager.getConnection("jdbc:mariadb://localhost:3306/itp", "root", ""); // gets a new connection
-		
-		PreparedStatement ps = s.prepareStatement("select signUpUserName,signUpPassword from signUp where signUpUserName=? and signUpPassword=? ");
-		
-		//PreparedStatement ps1 = s.prepareStatement("select customerid from signUp where email=? and password=?");
-		
-		ps.setString(1, un);
-		ps.setString(2, pw);
-		//ps1.setString(1, un);
-		//ps1.setString(2, pw);
-		//SignUp signUp = new SignUp();
-		ResultSet rs = ps.executeQuery();
-		//ResultSet rs1 = ps1.executeQuery();
-	
-		
-		/*
-		while (rs1.next()) {
-			System.out.println(rs1.getString(1));
-			signUp.setCompanyID(rs1.getString(1));
-			s1 = rs1.getString(1);
-			continue;
-		}
-
-
-			
-			PreparedStatement ps1 = c.prepareStatement("DROP TABLE IF EXISTS login");
-			PreparedStatement ps2 = c.prepareStatement("create table login( userName varchar(20), pass varchar(20), primary key (userName))");
-			PreparedStatement ps3 = c.prepareStatement("INSERT INTO login (userName, pass) VALUES ('admin', 'admin')");
-			PreparedStatement ps4 = c.prepareStatement("INSERT INTO login (userName, pass) VALUES ('dmkk', 'dmkk')");
-			
-			ResultSet rs1 = ps1.executeQuery();
-			ResultSet rs2 = ps2.executeQuery();
-			ResultSet rs3 = ps3.executeQuery();
-			ResultSet rs4 = ps4.executeQuery();
-	 */					Class.forName("org.mariadb.jdbc.Driver");
+					Class.forName("org.mariadb.jdbc.Driver");
 			 // loads driver
 			Connection c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/upperbalangoda", "root", "root"); // gets a new connection
-			PreparedStatement ps = c.prepareStatement("select signUpUserName,signUpPassword from signUp where signUpUserName=? and signUpPassword=?");
+		//	PreparedStatement ps = c.prepareStatement("select signUpUserName,signUpPassword from signUp where signUpUserName=? and signUpPassword=?");
+			PreparedStatement ps = c.prepareStatement("select * from signUp where signUpUserName=? and signUpPassword=?");
+			PreparedStatement ps1 = c.prepareStatement("select * from signUp where signUpUserName=? and signUpPassword=?");
 			ps.setString(1, un);
 			ps.setString(2, pw);
-	 
+			ps1.setString(1, un);
+			ps1.setString(2, pw);
 			ResultSet rs = ps.executeQuery();
+		/*	ResultSet rs1 = ps1.executeQuery();
+			
+			while (rs1.next()) {
+				System.out.println(rs1.getString(1));
+				su.setCompanyID(rs1.getString(1));
+				su.setCompanyName(rs1.getString(3));
+				su.setCompanyPassword(rs1.getString(5));
+				su.setCompanyRePassword(rs1.getString(6));
+				su.setCompanyType(rs1.getString(2));
+				su.setUserName(rs1.getString(4));
+				System.out.println(su.toString());
+				
+				s1 = rs1.getString(1);
+				
+			}*/
 		while (rs.next()) {
-			response.sendRedirect("admin.jsp");
+			System.out.println(rs.getString(1));
+			su.setCompanyID(rs.getString(1));
+			su.setCompanyName(rs.getString(3));
+			su.setCompanyPassword(rs.getString(5));
+			su.setCompanyRePassword(rs.getString(6));
+			su.setCompanyType(rs.getString(2));
+			su.setUserName(rs.getString(4));
+			System.out.println(su.toString());
+			String s = su.getCompanyID()
+;	
+			request.setAttribute("s", s);
+			request.setAttribute("su", su);
+			
+			if(un.equalsIgnoreCase("admin")) {
+				request.getRequestDispatcher("bidMenu.jsp").forward(request, response);
+				}
+				else
+				request.getRequestDispatcher("admin.jsp").forward(request, response);	
 			return;
 		}
-		response.sendRedirect("error.html");
+		response.sendRedirect("error.jsp");
 		return;
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

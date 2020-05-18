@@ -42,12 +42,11 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	        	<li class="nav-item active"><a href="index.jsp" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="about.jsp" class="nav-link">About</a></li>
 	        	<li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-	        	
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	           <li class="nav-item"><a href="contact.jsp" class="nav-link">Contact</a></li>
 	          <li class="nav-item"><a href="LoginConnect.jsp" class="nav-link">Login</a></li>
-	          <li class="nav-item cta"><a href="reservation.html" class="nav-link">Book a table</a></li>
+	          
 	        </ul>
 	      </div>
 	    </div>
@@ -158,7 +157,7 @@
 					<div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
 	          <div class="heading-section mb-4 my-5 my-md-0">
 	          	<span class="subheading">About</span>
-	            <h2 class="mb-4">Upper Balangoda</h2>
+	            <h2 class="mb-4">Upper Balangoda Tea Factory</h2>
 	          </div>
 	          <p>Upper Balangoda is a pioneer in distributing wide range of tea in Sri Lanka and Internationally.
 	          				 It was established on 1948 by Mr. A.K.G.Perera. It is located in Pettigala road,Balangoda. 
@@ -218,7 +217,7 @@
 	          </div>
           </div>
           <div class="col-md-3 text-center text-md-left">
-          	<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.y</p>
+          	<p>Enjoy Life sip by sip</p>
           </div>
         </div>
     	</div>
@@ -354,75 +353,7 @@
     	</div>
     </section>
     
-    
-		
-
-		<section class="ftco-section img" style="background-image: url(images/bg_3.jpg)" data-stellar-background-ratio="0.5">
-			<div class="container">
-				<div class="row d-flex">
-          <div class="col-md-7 ftco-animate makereservation p-4 px-md-5 pb-md-5">
-          	<div class="heading-section ftco-animate mb-5 text-center">
-	          	<span class="subheading">Book a table</span>
-	            <h2 class="mb-4">Make Reservation</h2>
-	          </div>
-            <form action="#">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Name</label>
-                    <input type="text" class="form-control" placeholder="Your Name">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="text" class="form-control" placeholder="Your Email">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Phone</label>
-                    <input type="text" class="form-control" placeholder="Phone">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Phone</label>
-                    <input type="text" class="form-control" id="book_date" placeholder="Date">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Time</label>
-                    <input type="text" class="form-control" id="book_time" placeholder="Time">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Person</label>
-                    <div class="select-wrap one-third">
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                        <option value="">Person</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4+</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12 mt-3">
-                  <div class="form-group text-center">
-                    <input type="submit" value="Make a Reservation" class="btn btn-primary py-3 px-5">
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-			</div>
-		</section>
+   
 		
 		<section class="ftco-section testimony-section img">
 			<div class="overlay"></div>
