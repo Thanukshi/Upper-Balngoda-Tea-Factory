@@ -85,8 +85,8 @@
 				signCompanyType varchar(100),
 				signUpName varchar(100),
 				signUpUserName varchar(100),
-				signUpPassword varchar(10),
-				signUpRePassword varchar(10),
+				signUpPassword varchar(30),
+				signUpRePassword varchar(30),
 				
 				primary key (signUpID)
 			);
